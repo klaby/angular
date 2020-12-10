@@ -1,0 +1,43 @@
+{
+  "root": true,
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "plugins": ["import-helpers"],
+      "parserOptions": {
+        "project": ["tsconfig.*?.json", "e2e/tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": ["plugin:@angular-eslint/recommended"],
+      "rules": {
+        "import-helpers/order-imports": [
+          "warn",
+          {
+            "newlinesBetween": "always",
+            "groups": [
+              "/^@angular/",
+              "module",
+              "/^@app/",
+              "/^@core/",
+              "/^@modules/",
+              "/^@public/",
+              ["parent", "sibling", "index"]
+            ],
+            "alphabetize": { "order": "asc", "ignoreCase": true }
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.component.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {
+        "max-len": ["error", { "code": 140 }]
+      }
+    },
+    {
+      "files": ["*.component.ts"],
+      "extends": ["plugin:@angular-eslint/template/process-inline-templates"]
+    }
+  ]
+}

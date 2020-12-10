@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
 
 import { AuthComponent } from '@modules/auth/auth.component'
 import { ConsoleComponent } from '@modules/console/console.component'
 
-import { RouterModule, Routes } from '@angular/router'
 
 const routes: Routes = [
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
