@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { AuthService } from './auth.service'
 import { CookieService } from 'ngx-cookie-service'
-import { Observable, of } from 'rxjs'
 import { Router } from '@angular/router'
 @Component({
   selector: 'app-auth',
